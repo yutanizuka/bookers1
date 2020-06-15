@@ -13,5 +13,19 @@
  *= require_tree .
  *= require_self
  */
+.notifications{
+  font-family:sans-serif;
+  margin:auto;
+  align-items: center;
+  text-align: center;
+  font-size:18px;
+}
+ .ok_notice{
+   background-color: green;
+   color:white;
+ }
 
- 
+.ng_notice{
+  background-color: orange;
+  color:white;
+}

@@ -17,7 +17,7 @@ class BooksController < ApplicationController
       flash[:notice] = "successfully"
     else
       @books = Book.all
-      flash[:notice] = "error prohibited this book from being saved:"
+      flash.now[:notice] = "error prohibited this book from being saved:"
       render "index"
     end
   end
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(params[:id])
     else
-      flash[:notice] = "error prohibited this book from being saved:"
+      flash.now[:notice] = "error prohibited this book from being saved:"
       render "edit"
     end
   end

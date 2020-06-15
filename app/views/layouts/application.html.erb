@@ -9,12 +9,16 @@
   </head>
 
   <body>
-    <div class="notice">
-      <% if flash[:notice] %>
-        <%= flash[:notice] %>
-      <% end %>
+    <div class="notifications">
+        <% if !@book.nil? %>
+          <% if @book.save %>
+            <div class="ok_notice"><%= flash[:notice] %></div>
+          <% elsif %>
+            <div class="ng_notice"><%= flash.now[:notice] %></div>
+          <% end %>
+        <% end %>
     </div>
       <%= yield %>
-    
+    </div>
   </body>
 </html>

@@ -28,18 +28,18 @@
 
   <h1>NEW Book</h1>
   <!-- form_for部分 -->
-  <div class="no-color-change" >
-    <%= form_for(@book,url: '/books') do |f| %>
+   <%= form_for(@book,url: '/books') do |f| %>
+      <div class="no-color-change" >
+        <% if @book.errors.any? %>
+          <% @book.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+          <%end%>
+        <% end %>
+        <p>Title</p>
+        <%= f.text_field :title %>
+        <p>body</p>
+        <%= f.text_area :body %> 
+        <%= f.submit 'Create Book'%>
       </div>
-      <% if @book.errors.any? %>
-        <% @book.errors.full_messages.each do |msg| %>
-          <%= msg %><br>
-        <%end%>
-      <% end %>
-      <p>Title</p>
-      <%= f.text_field :title %>
-      <p>body</p>
-      <%= f.text_area :body %> 
-      <%= f.submit 'Create Book'%>
     <% end %>
   </div>
