@@ -17,7 +17,7 @@
               <div class ="table">
                 <%= link_to "Show", book_path(book) %>
                 <%= link_to "Edit", edit_book_path(book) %> 
-                <%= link_to "Destroy", book_path(book), method: :Destroy, data: {confirm:"本当によろしいですか？"} %> 
+                <%= link_to "Destroy", book_path(book), method: :delete, data: {confirm:"本当によろしいですか？"} %> 
               </div>
             </td>
           </tr>
